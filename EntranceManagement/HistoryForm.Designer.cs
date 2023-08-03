@@ -38,12 +38,12 @@
             btnSearch = new Button();
             lblRangeMark = new Label();
             dgvHistory = new DataGridView();
-            btnOpenAddForm = new Button();
-            btnDelete = new Button();
             colWorkStart = new DataGridViewTextBoxColumn();
             colWorkEnd = new DataGridViewTextBoxColumn();
             colMemo = new DataGridViewTextBoxColumn();
             colId = new DataGridViewTextBoxColumn();
+            btnOpenAddForm = new Button();
+            btnDelete = new Button();
             gbSearchQuery.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvHistory).BeginInit();
             SuspendLayout();
@@ -139,27 +139,6 @@
             dgvHistory.Size = new Size(451, 447);
             dgvHistory.TabIndex = 0;
             // 
-            // btnOpenAddForm
-            // 
-            btnOpenAddForm.Location = new Point(388, 599);
-            btnOpenAddForm.Name = "btnOpenAddForm";
-            btnOpenAddForm.Size = new Size(75, 23);
-            btnOpenAddForm.TabIndex = 2;
-            btnOpenAddForm.Text = "追加";
-            btnOpenAddForm.UseVisualStyleBackColor = true;
-            btnOpenAddForm.Click += btnOpenAddForm_Click;
-            // 
-            // btnDelete
-            // 
-            btnDelete.ForeColor = Color.Red;
-            btnDelete.Location = new Point(12, 599);
-            btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(75, 23);
-            btnDelete.TabIndex = 3;
-            btnDelete.Text = "削除";
-            btnDelete.UseVisualStyleBackColor = true;
-            btnDelete.Click += btnDelete_Click;
-            // 
             // colWorkStart
             // 
             colWorkStart.DataPropertyName = "enter_date";
@@ -194,6 +173,27 @@
             colId.SortMode = DataGridViewColumnSortMode.NotSortable;
             colId.Visible = false;
             colId.Width = 5;
+            // 
+            // btnOpenAddForm
+            // 
+            btnOpenAddForm.Location = new Point(388, 599);
+            btnOpenAddForm.Name = "btnOpenAddForm";
+            btnOpenAddForm.Size = new Size(75, 23);
+            btnOpenAddForm.TabIndex = 2;
+            btnOpenAddForm.Text = "追加";
+            btnOpenAddForm.UseVisualStyleBackColor = true;
+            btnOpenAddForm.Click += btnOpenAddForm_Click;
+            // 
+            // btnDelete
+            // 
+            btnDelete.ForeColor = Color.Red;
+            btnDelete.Location = new Point(12, 599);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(75, 23);
+            btnDelete.TabIndex = 3;
+            btnDelete.Text = "削除";
+            btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += btnDelete_Click;
             // 
             // HistoryForm
             // 

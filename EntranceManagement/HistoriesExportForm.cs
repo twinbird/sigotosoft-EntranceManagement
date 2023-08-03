@@ -369,7 +369,8 @@ namespace EntranceManagement
         /// <param name="leave_date"></param>
         private void exportExcelReport(string savepath, DateTime enter_date, DateTime leave_date)
         {
-            if (configuration == null) {
+            if (configuration == null)
+            {
                 throw new Exception("configuration is not set.");
             }
 
