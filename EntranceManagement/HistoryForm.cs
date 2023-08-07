@@ -3,7 +3,7 @@
 namespace EntranceManagement
 {
     /// <summary>
-    /// 勤怠履歴
+    /// 履歴
     /// </summary>
     public partial class HistoryForm : Form
     {
@@ -63,7 +63,7 @@ namespace EntranceManagement
             }
 
             var id = dgvHistory.SelectedRows[0].Cells["colId"].Value;
-            deleteAttendance((long)id);
+            deleteEntranceLog((long)id);
 
             var employee_id = cbemployee.SelectedValue.ToString() ?? "";
             searchEntranceHistories(employee_id, dtpWorkStart.Value, dtpWorkEnd.Value);
@@ -194,10 +194,10 @@ namespace EntranceManagement
         }
 
         /// <summary>
-        /// 勤怠履歴を削除
+        /// 履歴を削除
         /// </summary>
-        /// <param name="attendance_id"></param>
-        private void deleteAttendance(long attendance_id)
+        /// <param name="entrance_id"></param>
+        private void deleteEntranceLog(long entrance_id)
         {
             if (configuration == null)
             {
@@ -206,7 +206,7 @@ namespace EntranceManagement
             }
 
             var db = new SQLiteADOWrapper(configuration.getDBFilePath());
-            var param = new Dictionary<string, object>() { { "id", attendance_id } };
+            var param = new Dictionary<string, object>() { { "id", entrance_id } };
             db.ExecuteNonQuery(@"
                 DELETE FROM entrance_histories
                 WHERE

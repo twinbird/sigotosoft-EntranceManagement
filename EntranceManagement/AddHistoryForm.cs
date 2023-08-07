@@ -56,7 +56,7 @@ namespace EntranceManagement
             {
                 return;
             }
-            if (registAttendance() == true)
+            if (registEntrance() == true)
             {
                 MessageBox.Show("登録しました", "登録完了", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -102,19 +102,19 @@ namespace EntranceManagement
             }
 
             // 入室日時か退室日時が登録済みの記録の範囲にある
-            if (isIncludeRegistedAttendanceRange(employee_id, dtpEnterDate.Value))
+            if (isIncludeRegistedEntranceRange(employee_id, dtpEnterDate.Value))
             {
                 epInput.SetError(dtpEnterDate, "入室日時が登録済みの入室時間内になっています");
                 return false;
             }
-            if (isIncludeRegistedAttendanceRange(employee_id, dtpLeaveDate.Value))
+            if (isIncludeRegistedEntranceRange(employee_id, dtpLeaveDate.Value))
             {
                 epInput.SetError(dtpLeaveDate, "退室日時が登録済みの入室時間内になっています");
                 return false;
             }
 
             // 入室日時と退室日時の間に登録済みの履歴がある
-            if (isIncludeRegistedAttendanceRange(employee_id, dtpEnterDate.Value, dtpLeaveDate.Value))
+            if (isIncludeRegistedEntranceRange(employee_id, dtpEnterDate.Value, dtpLeaveDate.Value))
             {
                 epInput.SetError(dtpEnterDate, "入室日時と退室日時の間に登録済みの履歴があります");
                 return false;
@@ -167,7 +167,7 @@ namespace EntranceManagement
         /// <summary>
         /// 履歴を登録する
         /// </summary>
-        private bool registAttendance()
+        private bool registEntrance()
         {
             if (configuration == null)
             {
@@ -222,7 +222,7 @@ namespace EntranceManagement
         /// </summary>
         /// <param name="dt"></param>
         /// <returns></returns>
-        private bool isIncludeRegistedAttendanceRange(string employee_id, DateTime dat)
+        private bool isIncludeRegistedEntranceRange(string employee_id, DateTime dat)
         {
             if (configuration == null)
             {
@@ -260,7 +260,7 @@ namespace EntranceManagement
         /// </summary>
         /// <param name="dt"></param>
         /// <returns></returns>
-        private bool isIncludeRegistedAttendanceRange(string employee_id, DateTime start, DateTime end)
+        private bool isIncludeRegistedEntranceRange(string employee_id, DateTime start, DateTime end)
         {
             if (configuration == null)
             {

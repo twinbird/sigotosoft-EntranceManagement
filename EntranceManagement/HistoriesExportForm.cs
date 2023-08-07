@@ -141,7 +141,7 @@ namespace EntranceManagement
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void AttendanceExportForm_Load(object sender, EventArgs e)
+        private void EntranceLogExportForm_Load(object sender, EventArgs e)
         {
             initForm();
         }

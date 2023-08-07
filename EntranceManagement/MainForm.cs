@@ -399,8 +399,8 @@ namespace EntranceManagement
                 MessageBox.Show("ìoò^Ç…é∏îsÇµÇ‹ÇµÇΩÅB", "ÉGÉâÅ[", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            var attendance_id = rec["id"].ToString();
-            if (attendance_id == null)
+            var entrance_id = rec["id"].ToString();
+            if (entrance_id == null)
             {
                 MessageBox.Show("ìoò^Ç…é∏îsÇµÇ‹ÇµÇΩÅB", "ÉGÉâÅ[", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -410,7 +410,7 @@ namespace EntranceManagement
             var db = new SQLiteADOWrapper(mConfiguration.getDBFilePath());
             var param = new Dictionary<string, object>() {
                 { "employee_id", id },
-                { "id", attendance_id },
+                { "id", entrance_id },
                 { "memo", memo },
             };
             var ret = db.ExecuteNonQuery(@"

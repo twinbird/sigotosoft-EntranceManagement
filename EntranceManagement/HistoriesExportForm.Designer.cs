@@ -129,7 +129,7 @@
             Name = "HistoriesExportForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "しごとソフト【入退室管理】 - 記録の出力";
-            Load += AttendanceExportForm_Load;
+            Load += EntranceLogExportForm_Load;
             gbSearchQuery.ResumeLayout(false);
             gbSearchQuery.PerformLayout();
             ResumeLayout(false);
