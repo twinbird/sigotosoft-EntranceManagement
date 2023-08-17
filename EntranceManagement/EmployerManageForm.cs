@@ -2,6 +2,7 @@
 using MathNet.Numerics.LinearAlgebra.Factorization;
 using System.Data;
 using System.Diagnostics.Eventing.Reader;
+using System.Text;
 
 namespace EntranceManagement
 {
@@ -542,7 +543,10 @@ namespace EntranceManagement
             }
             var rows = rowsList;
             var csv = CsvWriter.WriteToText(columnNames, rows, ',');
-            File.WriteAllText(filepath, csv);
+
+            // Shift-JISを使えるようにする
+            System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
+            File.WriteAllText(filepath, csv, Encoding.GetEncoding("shift_jis"));
         }
 
         /// <summary>
@@ -552,7 +556,9 @@ namespace EntranceManagement
         /// <returns></returns>
         private List<Dictionary<string, string>> csv2Dict(string filepath)
         {
-            var csv = File.ReadAllText(filepath);
+            // Shift-JISを使えるようにする
+            System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
+            var csv = File.ReadAllText(filepath, Encoding.GetEncoding("shift_jis"));
             var ret = new List<Dictionary<string, string>>();
             foreach (var line in CsvReader.ReadFromText(csv))
             {
